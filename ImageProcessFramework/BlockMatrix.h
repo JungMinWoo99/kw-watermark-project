@@ -5,7 +5,7 @@
 #include <algorithm>
 
 #define BLOCK_SIZE 8
-#define MAX_WARTER_MARK_LEN 400
+#define MAX_WARTER_MARK_LEN 1024
 
 class Block
 {

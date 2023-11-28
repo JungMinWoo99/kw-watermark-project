@@ -110,7 +110,6 @@ BEGIN_MESSAGE_MAP(CImageProcessFrameworkDlg, CDialogEx)
 	ON_COMMAND(ID_32802, &CImageProcessFrameworkDlg::InsertWM)
 	ON_COMMAND(ID_32803, &CImageProcessFrameworkDlg::ExtractWM)
 	ON_COMMAND(ID_JPEG32804, &CImageProcessFrameworkDlg::JPEGTest)
-	ON_COMMAND(ID_32805, &CImageProcessFrameworkDlg::BrightTest)
 END_MESSAGE_MAP()
 
 
@@ -866,11 +865,29 @@ void CImageProcessFrameworkDlg::ExtractWM()
 	std::vector<double> extracted_wm;
 	ExtractWatermark(src_dct_data, wm_dct_data, extracted_wm);
 
+	cv::Mat binary_img(32, 32, CV_8UC1, cv::Scalar(255));
+
+	for (int i = 0; i < 32; ++i) 
+	{
+		for (int j = 0; j < 32; ++j) 
+		{
+			int index = i * 32 + j;
+			if (extracted_wm[index] < 0) 
+				binary_img.at<uchar>(i, j) = 0;
+			else 
+				binary_img.at<uchar>(i, j) = 255;
+		}
+	}
+
+	cv::cvtColor(binary_img, binary_img, cv::COLOR_GRAY2BGR);
+
 	current_img = RawDataConvert::RawDataToMat(raw_data_manager.GetCurrentData());
 	src_img = RawDataConvert::RawDataToMat(raw_data_manager.GetSrcData());
 	double ns_sim = NSProb(randomSequence, extracted_wm);
 	PSNR psnr;
 	double psnr_value = psnr.GetPSNR(src_img, current_img);
+
+	binary_img.copyTo(current_img(cv::Rect(0, 0, binary_img.cols, binary_img.rows)));
 	cv::imshow(cv::format("NSProb:%.2f%%, PSNR:%f", ns_sim, psnr_value), current_img);
 }
 
@@ -890,7 +907,7 @@ void CImageProcessFrameworkDlg::JPEGTest()
 	for (int i = 9; i > 0; i--)
 	{
 		std::vector<uchar> compressed_data;
-		std::vector<int> compression_params = { cv::IMWRITE_JPEG_QUALITY, i * 10 }; // JPEG 품질 지정
+		std::vector<int> compression_params = { cv::IMWRITE_JPEG_QUALITY, i*10 }; // JPEG 품질 지정
 		cv::imencode(".jpg", current_img, compressed_data, compression_params);
 		cv::Mat decodedImage = cv::imdecode(compressed_data, cv::IMREAD_COLOR);
 
@@ -910,46 +927,6 @@ void CImageProcessFrameworkDlg::JPEGTest()
 		double ns_sim = NSProb(randomSequence, extracted_wm);
 		PSNR psnr;
 		double psnr_value = psnr.GetPSNR(src_img, decodedImage);
-		cv::imshow(cv::format("JPEG: %d%%, NSProb:%.2f%%, PSNR:%f", i * 10, ns_sim, psnr_value), decodedImage);
-	}
-}
-
-
-
-
-void CImageProcessFrameworkDlg::BrightTest()
-{
-	// TODO: 여기에 명령 처리기 코드를 추가합니다.
-	if (raw_data_manager.GetCurrentData() == nullptr)
-	{
-		MessageBox(_T("No Image"));
-		return;
-	}
-
-	cv::Mat current_img = RawDataConvert::RawDataToMat(raw_data_manager.GetCurrentData());
-	cv::Mat src_img = RawDataConvert::RawDataToMat(raw_data_manager.GetSrcData());
-
-	double value[4] = { 0.8,0.9,1.1,1.2 };
-	for (int i = 0; i < 4; i++)
-	{
-		cv::Mat src;
-		cv::Mat dec;
-		cv::Mat des;
-		cv::addWeighted(current_img, value[i], cv::Mat::zeros(src_img.size(), src_img.type()), 0, 0, dec);
-		cv::cvtColor(dec, des, cv::COLOR_BGR2GRAY);
-		cv::cvtColor(src_img, src, cv::COLOR_BGR2GRAY);
-
-		BlockMatrix src_dct_data;
-		BlockMatrix wm_dct_data;
-		DctTransformer::TransformImgToDct(src, src_dct_data);
-		DctTransformer::TransformImgToDct(des, wm_dct_data);
-
-		std::vector<double> extracted_wm;
-		ExtractWatermark(src_dct_data, wm_dct_data, extracted_wm);
-
-		double ns_sim = NSProb(randomSequence, extracted_wm);
-		PSNR psnr;
-		double psnr_value = psnr.GetPSNR(src_img, dec);
-		cv::imshow(cv::format("JPEG: %d%%, NSProb:%.2f%%, PSNR:%f", i * 10, ns_sim, psnr_value), dec);
+		cv::imshow(cv::format("JPEG: %d%%, NSProb:%.2f%%, PSNR:%f", i * 10 ,ns_sim, psnr_value), decodedImage);
 	}
 }

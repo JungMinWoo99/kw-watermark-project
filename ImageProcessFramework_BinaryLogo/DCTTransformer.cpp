@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "DCTTransformer.h"
 #include <math.h>
 #define M_PIl 3.141592653589793238462643383279502884L /* pi */
@@ -15,7 +16,6 @@ const double DctTransformer::luminanceValues[BLOCK_SIZE][BLOCK_SIZE] = {
     {49, 64, 78, 87, 103, 121, 120, 101},
     {72, 92, 95, 98, 112, 100, 103, 99}
 };
-
 
 void DctTransformer::ResizeAndPad(cv::Mat& input, cv::Mat& padded)
 {
@@ -234,13 +234,13 @@ void DctTransformer::TransformImgToDct(cv::Mat& src, BlockMatrix& dst)
     ResizeAndPad(src, padded);
     SplitImg(padded, dst);
     DctBlockVector(dst, dst);
-    //Quantization(dst, dst);
+    Quantization(dst, dst);
 }
 
 void DctTransformer::TransformDctToImg(BlockMatrix& src, cv::Mat& dst)
 {
     BlockMatrix res;
-    //InverseQuantization(src, res);
-    IdctBlockVector(src, res);
+    InverseQuantization(src, res);
+    IdctBlockVector(res, res);
     MergeBlock(res, dst);
 }

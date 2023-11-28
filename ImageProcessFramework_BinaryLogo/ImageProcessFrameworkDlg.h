@@ -72,5 +72,4 @@ public:
 	afx_msg void InsertWM();
 	afx_msg void ExtractWM();
 	afx_msg void JPEGTest();
-	afx_msg void BrightTest();
 };

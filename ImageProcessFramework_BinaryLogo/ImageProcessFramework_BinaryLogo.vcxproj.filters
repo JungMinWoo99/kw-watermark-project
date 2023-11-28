@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\NonGUI">
+      <UniqueIdentifier>{ffd779fe-2482-44c6-b8c5-f1106f40cb25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\GUI">
+      <UniqueIdentifier>{b50436cd-bd4d-4879-80bb-ce7eb1574749}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\GUI">
+      <UniqueIdentifier>{e44ccf03-9018-4537-b018-14846cda344b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\NonGUI">
+      <UniqueIdentifier>{b4de3edd-0f11-441f-b3bb-113aa0c260ae}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AvgFilter.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GaussianDlg.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="HistogramDlg.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageProcessFrameworkDlg.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="PLCSDlg.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ResizeDlg.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ResizeProcessDlg.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="RotateProcessDlg.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="BicubicInterpolation.h">
+      <Filter>헤더 파일\NonGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="BilinearInterpolation.h">
+      <Filter>헤더 파일\NonGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CoordinatesStruct.h">
+      <Filter>헤더 파일\NonGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter.h">
+      <Filter>헤더 파일\NonGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="HistogramProcessor.h">
+      <Filter>헤더 파일\NonGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ImgDataManager.h">
+      <Filter>헤더 파일\NonGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Interpolation.h">
+      <Filter>헤더 파일\NonGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleImageProcessor.h">
+      <Filter>헤더 파일\NonGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageProcessFramework.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Noise.h">
+      <Filter>헤더 파일\NonGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="PSNR.h">
+      <Filter>헤더 파일\NonGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GaussianNoiseDlg.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="SnPNoiseDlg.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ThresholdingDlg.h">
+      <Filter>헤더 파일\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockMatrix.h">
+      <Filter>헤더 파일\NonGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DCTTransformer.h">
+      <Filter>헤더 파일\NonGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Watermark.h">
+      <Filter>헤더 파일\NonGUI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BicubicInterpolation.cpp">
+      <Filter>소스 파일\NonGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="BilinearInterpolation.cpp">
+      <Filter>소스 파일\NonGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter.cpp">
+      <Filter>소스 파일\NonGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Interpolation.cpp">
+      <Filter>소스 파일\NonGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="HistogramProcessor.cpp">
+      <Filter>소스 파일\NonGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleImageProcessor.cpp">
+      <Filter>소스 파일\NonGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ImgDataManager.cpp">
+      <Filter>소스 파일\NonGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GaussianDlg.cpp">
+      <Filter>소스 파일\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="HistogramDlg.cpp">
+      <Filter>소스 파일\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageProcessFrameworkDlg.cpp">
+      <Filter>소스 파일\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>소스 파일\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="PLCSDlg.cpp">
+      <Filter>소스 파일\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ResizeDlg.cpp">
+      <Filter>소스 파일\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ResizeProcessDlg.cpp">
+      <Filter>소스 파일\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="RotateProcessDlg.cpp">
+      <Filter>소스 파일\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageProcessFramework.cpp">
+      <Filter>소스 파일\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="PSNR.cpp">
+      <Filter>소스 파일\NonGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Noise.cpp">
+      <Filter>소스 파일\NonGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GaussianNoiseDlg.cpp">
+      <Filter>소스 파일\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="SnPNoiseDlg.cpp">
+      <Filter>소스 파일\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ThresholdingDlg.cpp">
+      <Filter>소스 파일\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="AvgFilter.cpp">
+      <Filter>소스 파일\NonGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockMatrix.cpp">
+      <Filter>소스 파일\NonGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DCTTransformer.cpp">
+      <Filter>소스 파일\NonGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Watermark.cpp">
+      <Filter>소스 파일\NonGUI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ImageProcessFramework.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ImageProcessFramework.rc2">
+      <Filter>리소스 파일</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ImageProcessFramework.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

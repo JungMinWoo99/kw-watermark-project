@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{4A579E77-4F19-48F1-B92F-E6F47CEF76B6}</ProjectGuid>
+    <ProjectGuid>{1C4020A5-D5D4-4990-833B-4C93179168B6}</ProjectGuid>
     <Keyword>MFCProj</Keyword>
     <RootNamespace>ImageProcessFramework</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -250,7 +250,7 @@
     <ClCompile Include="Watermark.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ImageProcessFramework.rc" />
+    <ResourceCompile Include="ImageProcessFramework_BinaryLogo.rc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\ImageProcessFramework.rc2" />

@@ -113,13 +113,13 @@ std::vector<std::shared_ptr<Block>>& BlockMatrix::SortBlock(vector<array<int, 4>
 		{
 			return Block::CompDC(*a.get(), *b.get());
 		};
-	//std::sort(sorted.begin(), sorted.end(), comp_dc);
+	std::sort(sorted.begin(), sorted.begin() + MAX_WARTER_MARK_LEN / 4, comp_dc);
 
 	auto comp_ac = [](std::shared_ptr<Block> a, std::shared_ptr<Block> b)
 		{
 			return Block::CompAC(*a.get(), *b.get());
 		};
-	std::sort(sorted.begin(), sorted.end(), comp_ac);
+	std::sort(sorted.begin() + MAX_WARTER_MARK_LEN / 4, sorted.end(), comp_ac);
 
 	sorted_block_pos.resize(MAX_WARTER_MARK_LEN);
 	for (int i = 0; i < MAX_WARTER_MARK_LEN; i++)
@@ -130,7 +130,7 @@ std::vector<std::shared_ptr<Block>>& BlockMatrix::SortBlock(vector<array<int, 4>
 			{
 				if (sorted[i] == this->GetBlockPointer(n, m))
 				{
-					if (i < MAX_WARTER_MARK_LEN / 2)
+					if (i < MAX_WARTER_MARK_LEN / 4)
 					{
 						sorted_block_pos[i][0] = n;
 						sorted_block_pos[i][1] = m;

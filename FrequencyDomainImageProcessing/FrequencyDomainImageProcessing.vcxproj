@@ -130,7 +130,7 @@
   <ItemGroup>
     <ClCompile Include="BlockMatrix.cpp" />
     <ClCompile Include="DCTTransformer.cpp" />
-    <ClCompile Include="main4.cpp" />
+    <ClCompile Include="tem.cpp" />
     <ClCompile Include="Watermark.cpp" />
     <ClCompile Include="Watermark.h" />
   </ItemGroup>

@@ -26,6 +26,15 @@ int main() {
     BlockMatrix src_data;
     DctTransformer::TransformImgToDct(src, src_data);
 
+    for (int n = 0; n < 8; n++)
+    {
+        for (int m = 0; m < 8; m++)
+        {
+            cout << std::fixed << std::setprecision(2)<< src_data(0, 0)(n, m) << ' ';
+        }
+        cout<<endl;
+    }
+
     BlockMatrix afterdct_data;
     DctTransformer::TransformImgToDct(dst, afterdct_data);
 
