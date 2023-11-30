@@ -76,8 +76,6 @@ void ExtractWatermark(BlockMatrix& org, BlockMatrix& dct_data, vector<double>& e
 		array<int, 4> pos = sorted_block_pos[i];
 		extracted_sequence.push_back(delta(pos[0], pos[1])(pos[2], pos[3]) / WEIGHT);
 	}
-	//reverse(extracted_sequence.begin(), extracted_sequence.begin()+ MAX_WARTER_MARK_LEN / 2);
-	//reverse(extracted_sequence.begin() + MAX_WARTER_MARK_LEN / 2, extracted_sequence.end());
 
 	for (auto& value : extracted_sequence) {
 		// 각 원소를 소수점 둘째 자리 밑으로 버리기

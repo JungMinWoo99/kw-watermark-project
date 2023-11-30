@@ -114,7 +114,7 @@ std::vector<std::shared_ptr<Block>>& BlockMatrix::SortBlock(vector<array<int, 4>
 		{
 			return Block::CompDC(*a.get(), *b.get());
 		};
-	std::sort(sorted.begin(), sorted.begin() + MAX_WARTER_MARK_LEN / 4, comp_dc);
+	std::sort(sorted.begin(), sorted.end(), comp_dc);
 
 	auto comp_ac = [](std::shared_ptr<Block> a, std::shared_ptr<Block> b)
 		{
